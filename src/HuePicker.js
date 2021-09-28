@@ -7,7 +7,7 @@ import {
   PanResponder,
   StyleSheet,
 } from 'react-native';
-import { LinearGradient } from 'expo-linear-gradient';
+import LinearGradient from 'react-native-linear-gradient';
 import PropTypes from 'prop-types';
 import chroma from 'chroma-js';
 import normalizeValue from './utils';
@@ -129,16 +129,8 @@ export default class HuePicker extends Component {
     return (
       <View style={this.getContainerStyle()}>
         <TouchableWithoutFeedback onPress={this.firePressEvent}>
-          <LinearGradient
-            colors={hueColors}
-            style={{
-              borderRadius,
-            }}
-          >
-            <View style={{
-              width: barWidth, height: barHeight,
-            }}
-            />
+          <LinearGradient colors={hueColors} style={{ borderRadius }}>
+            <View style={{ width: barWidth, height: barHeight }} />
           </LinearGradient>
         </TouchableWithoutFeedback>
         <Animated.View
